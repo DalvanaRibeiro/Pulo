@@ -1,0 +1,62 @@
+/* Estilo geral para o jogo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o container do jogo */
+.game-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f8ff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilo para o personagem */
+.player {
+    width: 200px;
+    height: 200px;
+    background-color: none;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    border-radius: 10px;
+}
+
+/* Estilo para o obstáculo */
+.obstacle {
+    width: 30px;
+    height: 50px;
+    background-color: #ff5722;
+    position: absolute;
+    right: -30px;
+    /* Começa fora da tela */
+    bottom: 0;
+    animation: obstacleMove 1.5s linear infinite;
+}
+
+/* Animação para mover o obstáculo da direita para a esquerda */
+@keyframes obstacleMove {
+    from {
+        right: -30px;
+    }
+
+    to {
+        right: 100vw;
+    }
+}
+
+/* Estilo para a exibição da pontuação */
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
